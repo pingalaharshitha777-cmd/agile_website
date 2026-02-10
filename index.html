@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fact Hub | Fake News Detection</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand" onclick="showPage('landing')" style="cursor:pointer">
+      <div class="logo">FH</div>
+      <div>
+        <div class="brand-name">Fact Hub</div>
+        <div class="brand-tag">Fake news detection app + extension</div>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#features" onclick="showPage('landing')">Features</a>
+      <a href="#" onclick="showPage('subscriptions')">Pricing</a>
+      <a href="#reviews" onclick="showPage('landing')">Reviews</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn ghost" onclick="showLogin('login')">Log in</button>
+      <button class="btn primary" onclick="showLogin('signup')">Sign up</button>
+    </div>
+  </header>
+
+  <main id="landing-page" class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Stop fake news before it spreads.</h1>
+        <p class="sub">
+          Fact Hub helps you verify claims on webpages, in apps, and across social feeds—fast.
+          Use our browser extension or mobile app to check credibility and get citations.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn primary" onclick="showLogin('signup')">Get started</button>
+          <button class="btn" onclick="scrollToSection('how')">See how it works</button>
+        </div>
+
+        <div class="trust">
+          <div class="pill">⚡ Real-time checks</div>
+          <div class="pill">🔍 Evidence-based summaries</div>
+          <div class="pill">🧩 Chrome extension</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="product-card">
+          <div class="pc-top">
+            <div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div>
+            <span class="pc-title">Fact Hub Extension</span>
+          </div>
+          <div class="pc-body">
+            <div class="scan-row">
+              <div class="scan-label">Scanning page...</div>
+              <div class="scan-status ok">Verified</div>
+            </div>
+            <div class="meter">
+              <div class="bar" style="width: 78%"></div>
+            </div>
+            <div class="pc-small">Confidence score: <b>78%</b></div>
+            <div class="evidence">
+              <div class="ev-title">Top evidence</div>
+              <div class="ev-item">• Source cross-check from reputable outlets</div>
+              <div class="ev-item">• Claim consistency in known fact databases</div>
+              <div class="ev-item">• Highlighted mismatched context</div>
+            </div>
+            <div class="pc-cta">
+              <button class="btn small" onclick="showLogin('signup')">Install extension</button>
+              <button class="btn small ghost" onclick="showLogin('signup')">Download app</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Key features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Search & verify</h3>
+          <p>Paste a link or highlight text to verify claims and get an evidence summary.</p>
+        </div>
+        <div class="card">
+          <h3>Browser extension</h3>
+          <p>Detect misinformation directly on the page while you browse.</p>
+        </div>
+        <div class="card">
+          <h3>Mobile app</h3>
+          <p>Fact-check content shared in chats and social apps on the go.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>Capture content</b> (link, highlight, or screenshot).</li>
+        <li><b>Analyze</b> with credibility + consistency checks.</li>
+        <li><b>Explain</b> results with citations and context.</li>
+      </ol>
+    </section>
+
+    <section id="reviews" class="section">
+      <h2>Reviews</h2>
+      <div class="grid">
+        <div class="card">
+          <p>“Helped me quickly verify viral claims during elections.”</p>
+          <div class="small">★★★★★</div>
+        </div>
+        <div class="card">
+          <p>“The citations are the best part — you can actually see evidence.”</p>
+          <div class="small">★★★★★</div>
+        </div>
+        <div class="card">
+          <p>“Love that it works as an extension. Super fast.”</p>
+          <div class="small">★★★★☆</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="subscription-page" class="container hidden">
+    <section class="section">
+      <div class="pricing-header">
+        <h1>Choose your plan</h1>
+        <p class="sub">Upgrade to unlock advanced verification tools. Only one active plan allowed.</p>
+      </div>
+      
+      <div class="grid">
+        <div class="card price-card" id="plan-free">
+          <div class="pc-title">Free</div>
+          <div class="price">$0<span>/mo</span></div>
+          <ul class="price-list">
+            <li>50 Verifications/mo</li>
+            <li>Chrome Extension</li>
+          </ul>
+          <div class="plan-action"></div>
+        </div>
+
+        <div class="card price-card featured" id="plan-pro">
+          <div class="pc-title">Pro</div>
+          <div class="price">$9<span>/mo</span></div>
+          <ul class="price-list">
+            <li>Unlimited Verifications</li>
+            <li>Mobile App Access</li>
+            <li>Deep Source Citations</li>
+          </ul>
+          <div class="plan-action"></div>
+        </div>
+
+        <div class="card price-card" id="plan-team">
+          <div class="pc-title">Team</div>
+          <div class="price">$29<span>/mo</span></div>
+          <ul class="price-list">
+            <li>5 User Licenses</li>
+            <li>Shared Fact Logs</li>
+            <li>Priority Support</li>
+          </ul>
+          <div class="plan-action"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="profile-page" class="container hidden">
+    <section class="section">
+      <div class="profile-header">
+        <h1>My Profile</h1>
+        <p class="sub">Manage your account settings and preferences</p>
+      </div>
+
+      <div class="profile-grid">
+        <!-- Profile Info Card -->
+        <div class="card profile-info-card">
+          <div class="profile-avatar-large" id="profileAvatarLarge">
+            <span id="profileInitials">U</span>
+          </div>
+          <h3 id="profileDisplayName">User</h3>
+          <p class="profile-email" id="profileEmail">user@example.com</p>
+          <div class="profile-plan-badge" id="profilePlanBadge">FREE PLAN</div>
+        </div>
+
+        <!-- Account Details -->
+        <div class="card profile-section">
+          <h3 class="section-title">Account Information</h3>
+          <form id="profileForm" onsubmit="updateProfile(event)">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="fullName" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="emailInput" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Bio (Optional)</label>
+              <textarea id="bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+            </div>
+            <button type="submit" class="btn primary full">Save Changes</button>
+          </form>
+        </div>
+
+        <!-- Subscription Details -->
+        <div class="card profile-section">
+          <h3 class="section-title">Subscription</h3>
+          <div class="subscription-info">
+            <div class="sub-detail">
+              <span class="sub-label">Current Plan</span>
+              <span class="sub-value" id="currentPlanDisplay">Free</span>
+            </div>
+            <div class="sub-detail">
+              <span class="sub-label">Verifications Used</span>
+              <span class="sub-value" id="verificationsUsed">12 / 50</span>
+            </div>
+            <div class="sub-detail">
+              <span class="sub-label">Member Since</span>
+              <span class="sub-value" id="memberSince">February 2026</span>
+            </div>
+          </div>
+          <button class="btn primary full" onclick="showPage('subscriptions')">Manage Subscription</button>
+        </div>
+
+        <!-- Preferences -->
+        <div class="card profile-section">
+          <h3 class="section-title">Preferences</h3>
+          <div class="preference-item">
+            <div>
+              <div class="pref-label">Email Notifications</div>
+              <div class="pref-desc">Receive updates about your verifications</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="emailNotifications" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preference-item">
+            <div>
+              <div class="pref-label">Browser Extension Auto-Check</div>
+              <div class="pref-desc">Automatically verify pages as you browse</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="autoCheck" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preference-item">
+            <div>
+              <div class="pref-label">Dark Mode</div>
+              <div class="pref-desc">Use dark theme (currently active)</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="darkMode" checked disabled />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+      
+        <!-- Danger Zone -->
+        <div class="card profile-section danger-zone full-width">
+          <h3 class="section-title">Danger Zone</h3>
+          <div class="danger-actions">
+            <button class="btn ghost" onclick="confirmLogout()">Log Out</button>
+            <button class="btn ghost danger" onclick="confirmDeleteAccount()">Delete Account</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>©️ 2026 Fact Hub</div>
+    <div class="footer-links">
+      <a href="#" onclick="showLogin('login'); return false;">Log in</a>
+      <a href="#" onclick="showLogin('signup'); return false;">Sign up</a>
+      <a href="#">Contact</a>
+    </div>
+  </footer>
+
+  <div id="authModal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeAuth()"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div id="authTitle" class="modal-title">Welcome</div>
+          <div class="modal-sub">Continue to Fact Hub</div>
+        </div>
+        <button class="x" onclick="closeAuth()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="oauth">
+          <button class="btn oauth-btn" onclick="dummyOAuth('google')">G Continue with Google</button>
+          <button class="btn oauth-btn" onclick="dummyOAuth('apple')"> Continue with Apple</button>
+        </div>
+        <div class="divider"><span>or</span></div>
+        <form id="authForm" onsubmit="handleAuthSubmit(event)">
+          <label>Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required />
+          <label>Password</label>
+          <input id="password" type="password" placeholder="••••••••" required />
+          <button id="authSubmitBtn" class="btn primary full" type="submit">Continue</button>
+        </form>
+        <div class="switch">
+          <span id="switchText">Don’t have an account?</span>
+          <a href="#" id="switchLink" onclick="toggleAuthMode(); return false;">Sign up</a>
+        </div>
+        <div id="authMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
